@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SVG stack preview | svg-sprite</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                color: #666;
+                background: #fafafa;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1em;
+                line-height: 1.4;
+            }
+
+            header {
+                display: block;
+                padding: 3em 3em 2em;
+                background-color: #fff;
+            }
+
+            header p {
+                margin: 2em 0 0;
+            }
+
+            section {
+                border-top: 1px solid #eee;
+                padding: 2em 3em 0;
+            }
+
+            section ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            section li {
+                display: inline-block;
+                background-color: #fff;
+                position: relative;
+                margin: 0 2em 2em 0;
+                vertical-align: top;
+                border: 1px solid #ccc;
+                padding: 1em 1em 3em;
+                cursor: default;
+            }
+
+            .icon-box {
+                margin: 0;
+                width: 144px;
+                height: 144px;
+                position: relative;
+                background: #ccc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath fill='%23fff' d='M6 0h6v6H6zM0 6h6v6H0z'/%3E%3C/svg%3E") top left repeat;
+                border: 1px solid #ccc;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            .icon {
+                display: inline-block;
+            }
+
+            h1 {
+                margin-top: 0;
+            }
+
+            h2 {
+                margin: 0;
+                padding: 0;
+                font-size: 1em;
+                font-weight: 400;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                position: absolute;
+                left: 1em;
+                right: 1em;
+                bottom: 1em;
+            }
+
+            footer {
+                display: block;
+                margin: 0;
+                padding: 0 3em 3em;
+            }
+
+            footer p {
+                margin: 0;
+                font-size: .7em;
+            }
+
+            footer a {
+                color: #0f7595;
+                margin-left: 0;
+            }
+        </style>
+
+<!--
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as stack SVGs, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+-->
+
+<style>
+ .svg-ArrowLeft-grown-dims { width: 32px; height: 32px; }
+ .svg-ArrowLeft-white-dims { width: 32px; height: 32px; }
+ .svg-ArrowRight-grown-dims { width: 32px; height: 32px; }
+ .svg-ArrowRight-white-dims { width: 32px; height: 32px; }
+ .svg-baseball-dims { width: 20px; height: 20px; }
+ .svg-baseball-black-dims { width: 20px; height: 20px; }
+ .svg-facebook-dims { width: 50px; height: 50px; }
+ .svg-facebook-black-dims { width: 20px; height: 20px; }
+ .svg-figma-dims { width: 20px; height: 20px; }
+ .svg-figma-black-dims { width: 20px; height: 20px; }
+ .svg-hurt-dims { width: 22px; height: 22px; }
+ .svg-hurt-white-dims { width: 20px; height: 18px; }
+ .svg-phone-dims { width: 32px; height: 32px; }
+ .svg-price-dims { width: 32px; height: 32px; }
+ .svg-shop-dims { width: 25px; height: 24px; }
+ .svg-star-white-dims { width: 47px; height: 45px; }
+ .svg-star-yellow-dims { width: 47px; height: 45px; }
+ .svg-stroke-dims { width: 287px; height: 17px; }
+ .svg-truck-dims { width: 32px; height: 32px; }
+ .svg-whatsapp-dims { width: 20px; height: 20px; }
+ .svg-whatsapp-black-dims { width: 20px; height: 20px; }
+ .svg-youtube-dims { width: 20px; height: 20px; }
+ .svg-youtube-black-dims { width: 20px; height: 20px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+    </head>
+    <body>
+        <header>
+            <h1>SVG stack preview</h1>
+            <p>This preview features an SVG stack. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+            <ul>
+                <li>Your browser has to <a href="https://caniuse.com/svg-fragment" target="_blank" rel="noopener noreferrer">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+                <li>Support for SVG fragment identifiers hasn't always been that decent. For older browsers you will have to use some prolyfill like <a href="https://github.com/preciousforever/SVG-Stacker/blob/master/fixsvgstack.jquery.js" target="_blank" rel="noopener noreferrer">fixsvgstack.jquery.js</a>.</li>
+            </ul>
+        </header>
+        <section>
+
+<!--
+SVG stack
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) to reference certain portions of the
+external sprite. By default, all shapes inside the sprite are hidden by CSS. The `:target` pseudo
+selector is used to show the very shape that is referenced by the fragment identifier.
+-->
+
+            <ul>
+
+             <li title="ArrowLeft-grown">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#ArrowLeft-grown" class="svg-ArrowLeft-grown-dims" alt="ArrowLeft-grown">
+                    </div>
+                    <h2>ArrowLeft-grown, </h2>
+                </li>
+             <li title="ArrowLeft-white">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#ArrowLeft-white" class="svg-ArrowLeft-white-dims" alt="ArrowLeft-white">
+                    </div>
+                    <h2>ArrowLeft-white, </h2>
+                </li>
+             <li title="ArrowRight-grown">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#ArrowRight-grown" class="svg-ArrowRight-grown-dims" alt="ArrowRight-grown">
+                    </div>
+                    <h2>ArrowRight-grown, </h2>
+                </li>
+             <li title="ArrowRight-white">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#ArrowRight-white" class="svg-ArrowRight-white-dims" alt="ArrowRight-white">
+                    </div>
+                    <h2>ArrowRight-white, </h2>
+                </li>
+             <li title="baseball">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#baseball" class="svg-baseball-dims" alt="baseball">
+                    </div>
+                    <h2>baseball, </h2>
+                </li>
+             <li title="baseball-black">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#baseball-black" class="svg-baseball-black-dims" alt="baseball-black">
+                    </div>
+                    <h2>baseball-black, </h2>
+                </li>
+             <li title="facebook">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#facebook" class="svg-facebook-dims" alt="facebook">
+                    </div>
+                    <h2>facebook, </h2>
+                </li>
+             <li title="facebook-black">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#facebook-black" class="svg-facebook-black-dims" alt="facebook-black">
+                    </div>
+                    <h2>facebook-black, </h2>
+                </li>
+             <li title="figma">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#figma" class="svg-figma-dims" alt="figma">
+                    </div>
+                    <h2>figma, </h2>
+                </li>
+             <li title="figma-black">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#figma-black" class="svg-figma-black-dims" alt="figma-black">
+                    </div>
+                    <h2>figma-black, </h2>
+                </li>
+             <li title="hurt">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#hurt" class="svg-hurt-dims" alt="hurt">
+                    </div>
+                    <h2>hurt, </h2>
+                </li>
+             <li title="hurt-white">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#hurt-white" class="svg-hurt-white-dims" alt="hurt-white">
+                    </div>
+                    <h2>hurt-white, </h2>
+                </li>
+             <li title="phone">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#phone" class="svg-phone-dims" alt="phone">
+                    </div>
+                    <h2>phone, </h2>
+                </li>
+             <li title="price">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#price" class="svg-price-dims" alt="price">
+                    </div>
+                    <h2>price, </h2>
+                </li>
+             <li title="shop">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#shop" class="svg-shop-dims" alt="shop">
+                    </div>
+                    <h2>shop, </h2>
+                </li>
+             <li title="star-white">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#star-white" class="svg-star-white-dims" alt="star-white">
+                    </div>
+                    <h2>star-white, </h2>
+                </li>
+             <li title="star-yellow">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#star-yellow" class="svg-star-yellow-dims" alt="star-yellow">
+                    </div>
+                    <h2>star-yellow, </h2>
+                </li>
+             <li title="stroke">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#stroke" class="svg-stroke-dims" alt="stroke">
+                    </div>
+                    <h2>stroke, </h2>
+                </li>
+             <li title="truck">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#truck" class="svg-truck-dims" alt="truck">
+                    </div>
+                    <h2>truck, </h2>
+                </li>
+             <li title="whatsapp">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#whatsapp" class="svg-whatsapp-dims" alt="whatsapp">
+                    </div>
+                    <h2>whatsapp, </h2>
+                </li>
+             <li title="whatsapp-black">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#whatsapp-black" class="svg-whatsapp-black-dims" alt="whatsapp-black">
+                    </div>
+                    <h2>whatsapp-black, </h2>
+                </li>
+             <li title="youtube">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#youtube" class="svg-youtube-dims" alt="youtube">
+                    </div>
+                    <h2>youtube, </h2>
+                </li>
+             <li title="youtube-black">
+                    <div class="icon-box">
+                        <img src="../icons/icons.svg#youtube-black" class="svg-youtube-black-dims" alt="youtube-black">
+                    </div>
+                    <h2>youtube-black, </h2>
+                </li>
+         </ul>
+
+<!--
+====================================================================================================
+-->
+
+        </section>
+        <footer>
+            <p>Generated at Fri, 21 Jul 2023 16:28:05 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+        </footer>
+    </body>
+</html>
